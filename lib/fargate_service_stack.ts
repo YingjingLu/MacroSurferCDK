@@ -129,11 +129,11 @@ export class FargateServiceStack extends cdk.Stack {
 
         const containerDefinition = taskDefinition.addContainer(`${props.servicePrefix}Container`, {
             image: image,
-            logging: ecs.AwsLogDriver.awsLogs({
-                streamPrefix: props.serviceName,
-                logRetention: logs.RetentionDays.TWO_WEEKS,
-                mode: ecs.AwsLogDriverMode.NON_BLOCKING
-            }),
+            // logging: ecs.AwsLogDriver.awsLogs({
+            //     streamPrefix: props.serviceName,
+            //     logRetention: logs.RetentionDays.TWO_WEEKS,
+            //     mode: ecs.AwsLogDriverMode.NON_BLOCKING
+            // }),
         });
         containerDefinition.addPortMappings({
             containerPort: props.servicePort,
