@@ -36,7 +36,7 @@ export class AppStage extends cdk.Stage {
       maxCapacity: 1,
       dockerFileName: this.isProdStage(props?.stageName) ? "Dockerfile.prod" : "Dockerfile.devo",
       packagePath: props.repoConfigList[1].repoName,
-      servicePort: 80
+      servicePort: 8000
     });
 
     backendStack.addDependency(vpcStack);
