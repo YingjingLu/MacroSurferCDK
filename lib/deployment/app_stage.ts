@@ -31,7 +31,7 @@ export class AppStage extends cdk.Stage {
       childHostedZoneAccountId: props!.env!.account!,
       healthCheckPath: "/health/ping",
       cpu: 512,
-      memory: 1024,
+      memory: 2048,
       minCapacity: this.isProdStage(props?.stageName) ? 1 : 1,
       maxCapacity: 1,
       dockerFileName: this.isProdStage(props?.stageName) ? "Dockerfile.prod" : "Dockerfile.devo",
