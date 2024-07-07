@@ -13,6 +13,7 @@ export class VpcStack extends cdk.Stack {
         super(scope, id, props);
         this.vpc = new ec2.Vpc(this, `${props.servicePrefix}Vpc-${props.stage}`, {
             vpcName: `${props.servicePrefix}VPC-${props.stage}`,
+            // only create 1 az to save money
             maxAzs: 1,
         });
     }
